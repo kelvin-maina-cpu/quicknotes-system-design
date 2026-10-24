@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickNotes</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="api.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>QuickNotes</h1>
+        <p class="subtitle">Small notes, saved fast.</p>
+      </header>
+
+      <!-- Status messages for loading, success and error feedback -->
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section class="controls">
+        <button id="load-btn" type="button">Load notes</button>
+      </section>
+
+      <!-- Form to create a new note (POST is implemented in a later task) -->
+      <section class="form-card" aria-labelledby="note-form-heading">
+        <h2 id="note-form-heading">Create a note</h2>
+        <form id="note-form">
+          <div class="field">
+            <label for="title-input">Title</label>
+            <input id="title-input" name="title" type="text" placeholder="Note title" maxlength="100" />
+          </div>
+          <div class="field">
+            <label for="body-input">Body</label>
+            <textarea id="body-input" name="body" rows="4" placeholder="Write your note here..."></textarea>
+          </div>
+          <button id="submit-btn" type="submit">Create note</button>
+        </form>
+      </section>
+
+      <!-- Notes are rendered here after clicking "Load notes" -->
+      <section aria-labelledby="notes-heading">
+        <h2 id="notes-heading">Notes</h2>
+        <ul id="notes-list" class="notes-list"></ul>
+      </section>
+    </main>
+  </body>
+</html>
